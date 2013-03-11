@@ -11,7 +11,7 @@ class String extends Object
 {
     public function __construct($value)
     {
-        $this->value = $value;
+        return $this->returnObject($value);
     }
 
 

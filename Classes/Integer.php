@@ -10,27 +10,41 @@ class Integer extends Object
 {
     public function __construct($value)
     {
-        $this->value = $value;
+        if (is_numeric($value)) {
+            if (intval($value) === 0) {
+                return $this->returnBoolean(false);
+            } else {
+                $new_value = intval($value);
+                return $this->returnObject($new_value);
+            }
+        } else {
+            return $this->returnBoolean(false);
+        }
     }
 
     public function even()
     {
-        if($this->value % 2 == 0){
+        if ($this->value % 2 == 0) {
             return $this->returnBoolean(true);
         } else {
             return $this->returnBoolean(false);
         }
+    }
+
+    public function increment()
+    {
+        $new_value = $this->value + 1;
+        return $this->returnObject($new_value);
     }
 
     public function odd()
     {
-        if($this->value % 2 != 0){
+        if ($this->value % 2 != 0) {
             return $this->returnBoolean(true);
         } else {
             return $this->returnBoolean(false);
         }
     }
-
 
     private function returnBoolean($boolean)
     {
