@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2af3b1ab-61d8-4eb8-8fc3-96a399561119" name="Default" comment="Dmitriy: First commit. Strings are nearly done.">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/objective-php.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/support/collector/collectable.1" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/support/collector/collectable.2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/support/latin1_sample" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Boolean.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Integer.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Object.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ObjectPhpIncluder.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ObjectiveArray.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/String.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/HELP_MY_TESTS_DONT_WORK_ANYMORE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/README" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/VERSION" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/arguments.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/authentication.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/autorun.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/browser.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/collector.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/compatibility.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/cookies.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/default_reporter.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/detached.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/docs/en/authentication_documentation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/docs/en/browser_documentation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/docs/en/docs.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/docs/en/expectation_documentation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/docs/en/form_testing_documentation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/docs/en/group_test_documentation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/docs/en/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/docs/en/mock_objects_documentation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/docs/en/overview.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/docs/en/partial_mocks_documentation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/docs/en/reporter_documentation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/docs/en/unit_test_documentation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/docs/en/web_tester_documentation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/docs/fr/authentication_documentation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/docs/fr/browser_documentation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/docs/fr/docs.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/docs/fr/expectation_documentation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/docs/fr/form_testing_documentation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/docs/fr/group_test_documentation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/docs/fr/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/docs/fr/mock_objects_documentation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/docs/fr/overview.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/docs/fr/partial_mocks_documentation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/docs/fr/reporter_documentation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/docs/fr/unit_test_documentation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/docs/fr/web_tester_documentation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/dumper.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/eclipse.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/encoding.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/errors.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/exceptions.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/expectation.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/extensions/pear_test_case.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/extensions/testdox.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/extensions/testdox/test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/form.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/frames.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/http.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/invoker.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/mock_objects.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/page.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/php_parser.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/recorder.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/reflection_php4.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/reflection_php5.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/remote.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/reporter.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/scorer.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/selector.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/shell_tester.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/simpletest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/socket.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/tag.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/acceptance_test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/adapter_test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/all_tests.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/arguments_test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/authentication_test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/autorun_test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/bad_test_suite.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/browser_test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/collector_test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/command_line_test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/compatibility_test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/cookies_test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/detached_test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/dumper_test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/eclipse_test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/encoding_test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/errors_test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/exceptions_test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/expectation_test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/form_test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/frames_test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/http_test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/interfaces_test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/interfaces_test_php5_1.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/live_test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/mock_objects_test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/page_test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/parse_error_test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/parsing_test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/php_parser_test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/recorder_test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/reflection_php5_test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/remote_test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/shell_test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/shell_tester_test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/simpletest_test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/site/file.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/socket_test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/support/empty_test_file.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/support/failing_test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/support/passing_test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/support/recorder_sample.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/support/spl_examples.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/support/supplementary_upload_sample.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/support/test1.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/support/upload_sample.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/tag_test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/test_with_parse_error.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/unit_tester_test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/unit_tests.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/url_test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/user_agent_test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/visual_test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/web_tester_test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test/xml_test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/test_case.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/tidy_parser.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/unit_tester.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/url.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/user_agent.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/web_tester.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpletest/xml.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test_Integer.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test_Object.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test_String.php" />
+    </list>
+    <ignored path="objective-php.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="Boolean.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Boolean.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="1" selection-start="252" selection-end="252" vertical-scroll-proportion="0.37366548">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="48" />
+    <option name="y" value="-4" />
+    <option name="width" value="1326" />
+    <option name="height" value="780" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents ProjectPane="true" />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="objective-php" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="objective-php" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="objective-php" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <list size="0" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="DETECT_NESTED_COPIES" value="true" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <created>1362998447662</created>
+      <updated>1362998447662</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="48" y="-4" width="1326" height="780" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.67156863" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_NEW_TODO" value="true" />
+    <option name="myTodoPanelSettings">
+      <value>
+        <are-packages-shown value="false" />
+        <are-modules-shown value="false" />
+        <flatten-packages value="false" />
+        <is-autoscroll-to-source value="false" />
+      </value>
+    </option>
+    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
+    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
+    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
+    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
+    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
+    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
+    <option name="SHORT_DIFF_HORISONTALLY" value="true" />
+    <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
+    <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
+    <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
+    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
+    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dmitriy: First commit. Strings are nearly done." />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
+    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
+    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
+    <option name="ACTIVE_VCS_NAME" />
+    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
+    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
+    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
+    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+    <MESSAGE value="Dmitriy: First commit. Strings are nearly done." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/simpletest/test/test_with_parse_error.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="55" selection-start="141" selection-end="141" vertical-scroll-proportion="0.12465374">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Boolean.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="1" selection-start="252" selection-end="252" vertical-scroll-proportion="0.37366548">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+
