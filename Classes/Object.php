@@ -1,6 +1,6 @@
 <?php
 
-
+include "InterfaceIncluder.php";
 /**
  * User: michael
  * Date: 2/15/13
@@ -74,5 +74,9 @@ class Object
     {
         $cloned_object = new self($this->value);
         return $cloned_object;
+    }
+
+    public function __toString(){
+        return (string)$this->value;
     }
 }

@@ -4,7 +4,8 @@
  * Date: 3/11/13
  * Time: 5:11 PM
  */
-class Float extends Object
+
+class Float extends Object implements NumericInterface
 {
     public function __construct($value)
     {
@@ -17,6 +18,21 @@ class Float extends Object
         }
     }
 
+    public function round($precision = 0){
+        $new_value = round($this->value, $precision);
+        return $this->returnObject($new_value);
+    }
+
+    public function increment()
+    {
+        $new_value = $this->value += 1;
+        return $this->returnObject($new_value);
+    }
+
+    public function abs()
+    {
+        // TODO: Implement abs() method.
+    }
 
     private function returnBoolean($boolean)
     {

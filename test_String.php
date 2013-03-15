@@ -31,21 +31,21 @@ class test_String extends UnitTestCase
     function  testAdding(){
         $string = new String("Test");
         $string->add("lol");
-        $this->assertEqual($string->getValue(), "Testlol");
+        $this->assertEqual($string, "Testlol");
 
         $string->add(123);
-        $this->assertEqual($string->getValue(), "Testlol123");
+        $this->assertEqual($string, "Testlol123");
 
         $string->add("123");
-        $this->assertEqual($string->getValue(), "Testlol123123");
+        $this->assertEqual($string, "Testlol123123");
 
         $string->add("$:");
-        $this->assertEqual($string->getValue(), "Testlol123123$:");
+        $this->assertEqual($string, "Testlol123123$:");
 
         //You can add arrays
         $array = array('this', 'is', 'an array');
         $string->add($array);
-        $this->assertEqual($string->getValue(), "Testlol123123$:thisisan array");
+        $this->assertEqual($string, "Testlol123123$:thisisan array");
 
         $string->setValue("");
         $hash = array(
@@ -53,12 +53,12 @@ class test_String extends UnitTestCase
             "first" => "element"
         );
         $string->add($hash);
-        $this->assertEqual($string->getValue(), "testelement");
+        $this->assertEqual($string, "testelement");
     }
 
     function testLength(){
         $string = new String("Test");
-        $this->assertEqual($string->length()->getValue(), 4);
+        $this->assertEqual($string->length(), "4");
     }
 
     function testCompare(){
@@ -71,29 +71,29 @@ class test_String extends UnitTestCase
 
     function testCapitalize(){
         $string = new String("test");
-        $this->assertEqual($string->capitalize()->getValue(), "Test");
+        $this->assertEqual($string->capitalize(), "Test");
 
         $string = new String("tEsT");
-        $this->assertEqual($string->capitalize()->getValue(), "Test");
+        $this->assertEqual($string->capitalize(), "Test");
     }
 
     function testClear(){
         $string = new String("Test");
         $string->clear();
-        $this->assertEqual($string->getValue(), "");
+        $this->assertEqual($string, "");
         $this->assertTrue($string->isEmpty());
     }
 
     function testSlice(){
         $string = new String("Test");
 
-        $this->assertEqual($string->slice(0, 2)->getValue(), "Te");
+        $this->assertEqual($string->slice(0, 2), "Te");
 
         $string = new String("Test");
-        $this->assertEqual($string->slice(2, 1)->getValue(), "s");
+        $this->assertEqual($string->slice(2, 1), "s");
 
         $string = new String("Test");
-        $this->assertEqual($string->slice(0, 428)->getValue(), "Test");
+        $this->assertEqual($string->slice(0, 428), "Test");
     }
 
     function test_getChar(){
@@ -109,7 +109,7 @@ class test_String extends UnitTestCase
             return $substring;
         });
 
-        $this->assertEqual($value->getValue(), "ZZZ ZZZ ZZZ ");
+        $this->assertEqual($value, "ZZZ ZZZ ZZZ ");
 
         //If lambda will not do anything with the substrings, only the patterns will be cut
 
@@ -119,7 +119,7 @@ class test_String extends UnitTestCase
             $aaa = 1;
         });
 
-        $this->assertEqual($value->getValue(), "{name:'Ivan' surname:'Ivanov' age:'35'}");
+        $this->assertEqual($value, "{name:'Ivan' surname:'Ivanov' age:'35'}");
 
         //If there will be more then 1 argument, value will be false
 
@@ -136,11 +136,11 @@ class test_String extends UnitTestCase
 
     function testReplaceSubstring(){
         $string = new String("Test");
-        $this->assertEqual($string->replaceSubstring("T")->getValue(), "est");
+        $this->assertEqual($string->replaceSubstring("T"), "est");
         $string = new String("Test");
-        $this->assertEqual($string->replaceSubstring("t", "", true)->getValue(), "es");
+        $this->assertEqual($string->replaceSubstring("t", "", true), "es");
         $string = new String("Test");
-        $this->assertEqual($string->replaceSubstring("Te", "Lo", true)->getValue(), "Lost");
+        $this->assertEqual($string->replaceSubstring("Te", "Lo", true), "Lost");
     }
 
     function testIncludeString(){
@@ -151,9 +151,9 @@ class test_String extends UnitTestCase
 
     function testInsert(){
         $string = new String("Test");
-        $this->assertEqual($string->insert(2, "LOL")->getValue(), "TeLOLst");
+        $this->assertEqual($string->insert(2, "LOL"), "TeLOLst");
         $string = new String("Test");
-        $this->assertEqual($string->insert(42, "LOL")->getValue(), "TestLOL");
+        $this->assertEqual($string->insert(42, "LOL"), "TestLOL");
     }
 
     function testCount(){
@@ -165,17 +165,17 @@ class test_String extends UnitTestCase
 
     function testMd5(){
         $string = new String("Test");
-        $this->assertEqual($string->generateMd5()->getValue(), md5("Test"));
+        $this->assertEqual($string->generateMd5(), md5("Test"));
     }
 
     function testEscape(){
         $string = new String("test'string");
-        $this->assertEqual($string->escape()->getValue(), "test\'string");
+        $this->assertEqual($string->escape(), "test\'string");
     }
 
     function testReverse(){
         $string = new String("Test");
-        $this->assertEqual($string->reverse()->getValue(), "tseT");
+        $this->assertEqual($string->reverse(), "tseT");
     }
 
     function testToInt(){

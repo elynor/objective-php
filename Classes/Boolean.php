@@ -12,4 +12,9 @@ class Boolean extends Object{
             $this->value = false;
         }
     }
+
+    public function __toString(){
+        return "";
+    }
+
 }
