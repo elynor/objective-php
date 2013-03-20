@@ -25,13 +25,14 @@ class Float extends Object implements NumericInterface
 
     public function increment()
     {
-        $new_value = $this->value += 1;
+        $new_value = $this->value + 1;
         return $this->returnObject($new_value);
     }
 
     public function abs()
     {
-        // TODO: Implement abs() method.
+        $new_value = abs($this->value);
+        return $this->returnObject($new_value);
     }
 
     private function returnBoolean($boolean)

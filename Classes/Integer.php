@@ -6,7 +6,7 @@
  */
 require_once("Object.php");
 
-class Integer extends Object
+class Integer extends Object implements NumericInterface
 {
     public function __construct($value)
     {
@@ -37,6 +37,12 @@ class Integer extends Object
         return $this->returnObject($new_value);
     }
 
+    public function abs()
+    {
+        $new_value = abs($this->value);
+        return $this->returnObject($new_value);
+    }
+
     public function odd()
     {
         if ($this->value % 2 != 0) {
@@ -56,5 +62,6 @@ class Integer extends Object
         $this->value = $new_value;
         return $this;
     }
+
 
 }

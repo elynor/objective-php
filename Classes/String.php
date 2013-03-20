@@ -7,6 +7,14 @@
 //require_once("Object.php");
 //require_once("Integer.php");
 
+define(ERROR_NOT_A_NUMBER, "This is not a number!");
+define(ERROR_INCLUDE, "There is no such substring in this string!");
+define(ERROR_OUT_OF_RANGE, "Index is out of range!");
+define(ERROR_WRONG_ARGS_COUNT, "Number of arguments is not valid!");
+define(ERROR_WRONG_CLASS, "Argument is not String!");
+
+
+
 class String extends Object
 {
     public function __construct($value)
@@ -26,7 +34,7 @@ class String extends Object
                 }
             } else {
                 $other_string = $this->checkForObject($other_string);
-                $this->value .= $other_string->getValue();
+                $this->value .= $other_string;
             }
 
             return $this->returnObject($this->value);
@@ -69,7 +77,7 @@ class String extends Object
                 return $this->returnIntObject($LESS);
             }
         } else {
-
+            $this->throwException(ERROR_WRONG_CLASS);
         }
     }
 
@@ -93,11 +101,11 @@ class String extends Object
                 $block;
                 $substring = new self($substring);
             } else {
-                return $this->returnFalseObject();
+                $this->throwException(ERROR_WRONG_ARGS_COUNT);
             }
             $final_string->add($substring);
         }
-        return $this->returnObject($final_string->getValue());
+        return $this->returnObject($final_string);
     }
 
 
@@ -130,11 +138,11 @@ class String extends Object
                 if ($return_last) {
                     return $this->returnCharObject($this->value[$this->length()->getValue() - 1]);
                 } else {
-                    return $this->returnFalseObject();  
+                    $this->throwException(ERROR_OUT_OF_RANGE);
                 }
             }
         } else {
-            return $this->returnFalseObject();
+            $this->throwException(ERROR_NOT_A_NUMBER);
         }
     }
 
@@ -146,7 +154,7 @@ class String extends Object
         if($position !== false){
             return $this->returnIntObject($position);
         } else {
-            return $this->returnFalseObject();
+            $this->throwException(ERROR_INCLUDE);
         }
     }
 
@@ -171,6 +179,9 @@ class String extends Object
         return $this->returnNewObject($md5);
     }
 
+    /*
+     * ToDo: Make this method. Srsly!!!
+     */
 
     public function regexp($pattern, $var)
     {
@@ -238,12 +249,15 @@ class String extends Object
         return $this->returnArrayObject($array);
     }
 
+    /*
+     * If the string is not a number, throws an exception
+     */
     public function toInteger()
     {
         if(is_numeric($this->value)){
             if($this->length()->getValue() > 1){
                 if(intval($this->value) === 0){
-                    return $this->returnFalseObject();
+                    $this->throwException(ERROR_NOT_A_NUMBER);
                 } else {
                     return $this->returnIntObject(intval($this->value));
                 }
@@ -251,7 +265,7 @@ class String extends Object
                 return $this->returnIntObject(intval($this->value));
             }
         } else {
-            return $this->returnFalseObject();
+            $this->throwException(ERROR_NOT_A_NUMBER);
         }
     }
 
@@ -318,6 +332,8 @@ class String extends Object
     {
         return $char;
     }
+
+
 
 
 }

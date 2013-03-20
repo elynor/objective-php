@@ -1,6 +1,7 @@
 <?php
 
 include "InterfaceIncluder.php";
+include "ObjectCreator/ObjectCreator.php";
 /**
  * User: michael
  * Date: 2/15/13
@@ -30,16 +31,15 @@ class Object
         $this->value = $value;
     }
 
-
     public function isEmpty()
     {
         if (empty($this->value) ||
             $this->value === "" ||
             $this->value === false
         ) {
-            return true;
+            return $this->returnBoolObject(true);
         } else {
-            return false;
+            return $this->returnBoolObject(false);
         }
     }
 
@@ -48,14 +48,15 @@ class Object
      */
     public function equals($other_class)
     {
+        $bool_factory = new BooleanCreator();
         if (method_exists($other_class, "getValue")) {
             if ($this->getValue() === $other_class->getValue()) {
-                return true;
+                return $this->returnBoolObject(true);
             } else {
-                return false;
+                return $this->returnBoolObject(false);
             }
         } else {
-            return false;
+            return $this->returnBoolObject(false);
         }
 
     }
@@ -78,5 +79,14 @@ class Object
 
     public function __toString(){
         return (string)$this->value;
+    }
+
+    protected function returnBoolObject($value){
+        $bool_factory = new BooleanCreator();
+        return $bool_factory->create($value);
+    }
+
+    protected  function throwException($message){
+        throw new Exception($message);
     }
 }

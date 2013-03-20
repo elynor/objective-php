@@ -13,14 +13,14 @@ class test_String extends UnitTestCase
 
     function testForEmptiness(){
         $string = new String("Test");
-        $this->assertFalse($string->isEmpty());
+        $this->assertFalse($string->isEmpty()->getValue());
     }
 
     function testEquality(){
         $String_0 = new String("Test");
         $String_1 = $String_0->getClone();
         $this->assertTrue($String_0->equals($String_1));
-        $this->assertFalse($String_0->equals("123"));
+        $this->assertFalse($String_0->equals("123")->getValue());
     }
 
     function testHashCode(){
@@ -121,16 +121,20 @@ class test_String extends UnitTestCase
 
         $this->assertEqual($value, "{name:'Ivan' surname:'Ivanov' age:'35'}");
 
-        //If there will be more then 1 argument, value will be false
+        //If there will be more then 1 argument, exception will rise
+
 
         $string = new String("{name:'Ivan', surname:'Ivanov', age:'35'}");
 
+        try{
         $value = $string->each(",", function ($substring, $substring1, $substring2, $substring3) {
             $substring->setValue("ZZZ ");
             return $substring;
         });
+        } catch(Exception $ex){
+            $this->assertEqual($ex->getMessage(), "Number of arguments is not valid!");
+        }
 
-        $this->assertFalse($value->getValue());
 
     }
 
@@ -146,7 +150,14 @@ class test_String extends UnitTestCase
     function testIncludeString(){
         $string = new String("Test");
         $this->assertEqual($string->includeString("T")->getValue(), 0);
-        $this->assertFalse($string->includeString("LOL")->getValue());
+
+        try{
+            $string->includeString("LOL");
+        }catch (Exception $ex){
+            $this->assertEqual($ex->getMessage(), "There is no such substring in this string!");
+        }
+
+
     }
 
     function testInsert(){
@@ -183,10 +194,22 @@ class test_String extends UnitTestCase
         $this->assertEqual($string->toInteger()->getValue(), 42);
         $string->setValue("0");
         $this->assertEqual($string->toInteger()->getValue(), 0);
+
+        //If it is not a number, the exception will rise
         $string->setValue("e");
-        $this->assertFalse($string->toInteger()->getValue());
+        try{
+            $string->toInteger()->getValue();
+        }catch (Exception $ex){
+            $this->assertEqual($ex->getMessage(), "This is not a number!");
+        }
+
+        //Same story
         $string->setValue("e23");
-        $this->assertFalse($string->toInteger()->getValue());
+        try{
+            $string->toInteger()->getValue();
+        }catch (Exception $ex){
+            $this->assertEqual($ex->getMessage(), "This is not a number!");
+        }
     }
 
 }

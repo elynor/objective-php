@@ -6,11 +6,12 @@ echo $str->length()->getValue();
 
 $int = new Integer(12);
 echo $int->getValue();*/
+/*$a = new ObjectiveArray("test", "1", "2", "3");
+echo $a->lol();*/
 
-$test_integer = new Integer(123);
-echo $test_integer;
-
-$test_integer = new Integer(123);
-if($test_integer->getValue() == 123){
-    echo "Done";
+$str = new String("ololol");
+try{
+    $str->includeString("123");
+} catch (Exception $ex){
+    echo $ex->getMessage();
 }
