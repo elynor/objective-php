@@ -13,14 +13,14 @@ class test_String extends UnitTestCase
 
     function testForEmptiness(){
         $string = new String("Test");
-        $this->assertFalse($string->isEmpty()->getValue());
+        $this->assertFalse($string->isEmpty());
     }
 
     function testEquality(){
         $String_0 = new String("Test");
         $String_1 = $String_0->getClone();
         $this->assertTrue($String_0->equals($String_1));
-        $this->assertFalse($String_0->equals("123")->getValue());
+        $this->assertFalse($String_0->equals("123"));
     }
 
     function testHashCode(){

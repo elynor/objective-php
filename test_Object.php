@@ -6,7 +6,7 @@
  */
 
 require_once('simpletest/autorun.php');
-require_once('Object.php');
+require_once('ObjectPhpIncluder.php');
 
 class ObjectTests extends UnitTestCase {
 

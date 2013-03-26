@@ -37,9 +37,9 @@ class Object
             $this->value === "" ||
             $this->value === false
         ) {
-            return $this->returnBoolObject(true);
+            return true;
         } else {
-            return $this->returnBoolObject(false);
+            return false;
         }
     }
 
@@ -51,12 +51,12 @@ class Object
         $bool_factory = new BooleanCreator();
         if (method_exists($other_class, "getValue")) {
             if ($this->getValue() === $other_class->getValue()) {
-                return $this->returnBoolObject(true);
+                return true;
             } else {
-                return $this->returnBoolObject(false);
+                return false;
             }
         } else {
-            return $this->returnBoolObject(false);
+            return false;
         }
 
     }
@@ -81,12 +81,30 @@ class Object
         return (string)$this->value;
     }
 
-    protected function returnBoolObject($value){
-        $bool_factory = new BooleanCreator();
-        return $bool_factory->create($value);
-    }
-
     protected  function throwException($message){
         throw new Exception($message);
     }
+
+    protected function returnInteger($value){
+        return IntegerCreator::create($value);
+    }
+
+    protected function returnString($value){
+        return StringCreator::create($value);
+    }
+
+    protected function returnFloat($value){
+        return FloatCreator::create($value);
+    }
+
+    protected function returnArray($value){
+        return ArrayCreator::create($value);
+    }
+
+    protected function returnSelf($modified_value){
+        $this->value = $modified_value;
+        return $this;
+    }
+
+
 }

@@ -19,7 +19,7 @@ class String extends Object
 {
     public function __construct($value)
     {
-        return $this->returnObject($value);
+        return $this->returnSelf($value);
     }
 
 
@@ -37,7 +37,7 @@ class String extends Object
                 $this->value .= $other_string;
             }
 
-            return $this->returnObject($this->value);
+            return $this->returnSelf($this->value);
 
         } catch (Exception $exception) {
             echo $exception;
@@ -48,13 +48,14 @@ class String extends Object
     public function capitalize()
     {
         $str = $this->value;
-        return $this->returnObject(strtoupper($this->value[0]) . strtolower(substr($str, 1)));
+        $new_value = strtoupper($this->value[0]) . strtolower(substr($str, 1));
+        return $this->returnSelf($new_value);
     }
 
 
     public function clear()
     {
-        return $this->returnObject("");
+        return $this->returnSelf("");
     }
 
     /*
@@ -70,11 +71,11 @@ class String extends Object
 
         if ($other_string_object->getClass() === "String") {
             if ($this->length()->getValue() > $other_string_object->length()->getValue()) {
-                return $this->returnIntObject($MORE);
+                return $this->returnInteger($MORE);
             } elseif ($this->length()->getValue() == $other_string_object->length()->getValue()) {
-                return $this->returnIntObject($EQUALS);
+                return $this->returnInteger($EQUALS);
             } elseif ($this->length()->getValue() < $other_string_object->length()->getValue()) {
-                return $this->returnIntObject($LESS);
+                return $this->returnInteger($LESS);
             }
         } else {
             $this->throwException(ERROR_WRONG_CLASS);
@@ -83,7 +84,8 @@ class String extends Object
 
     public function count($substring)
     {
-        return $this->returnIntObject(substr_count($this->value, $substring));
+        $value = substr_count($this->value, $substring);
+        return $this->returnInteger($value);
     }
 
 
@@ -105,27 +107,27 @@ class String extends Object
             }
             $final_string->add($substring);
         }
-        return $this->returnObject($final_string);
+        return $this->returnSelf($final_string);
     }
 
 
     public function escape()
     {
         $new_value = addslashes($this->value);
-        return $this->returnObject($new_value);
+        return $this->returnSelf($new_value);
     }
 
 
     public function escapeHtml()
     {
         $new_value = htmlspecialchars($this->value);
-        return $this->returnObject($new_value);
+        return $this->returnSelf($new_value);
     }
 
     public function escapeMysql()
     {
         $new_value = mysql_real_escape_string($this->value);
-        return $this->returnObject($new_value);
+        return $this->returnSelf($new_value);
     }
 
 
@@ -133,10 +135,10 @@ class String extends Object
     {
         if (is_int($char_position)) {
             if (!empty($this->value[$char_position])) {
-                return $this->returnCharObject($this->value[$char_position]);
+                return $this->returnString($this->value[$char_position]);
             } else {
                 if ($return_last) {
-                    return $this->returnCharObject($this->value[$this->length()->getValue() - 1]);
+                    return $this->returnString($this->value[$this->length()->getValue() - 1]);
                 } else {
                     $this->throwException(ERROR_OUT_OF_RANGE);
                 }
@@ -152,7 +154,7 @@ class String extends Object
         $substring = $this->checkForObject($substring);
         $position = strpos($this->value, $substring->getValue());
         if($position !== false){
-            return $this->returnIntObject($position);
+            return $this->returnInteger($position);
         } else {
             $this->throwException(ERROR_INCLUDE);
         }
@@ -164,19 +166,19 @@ class String extends Object
         $first_part = substr($this->value, 0, $index);
         $second_part = substr($this->value, $index, $this->length()->getValue() - 1);
         $new_value = $first_part . $string . $second_part;
-        return $this->returnObject($new_value);
+        return $this->returnSelf($new_value);
     }
 
 
     public function length()
     {
-        return $this->returnIntObject(strlen($this->value));
+        return $this->returnInteger(strlen($this->value));
     }
 
     public function generateMd5()
     {
         $md5 = md5($this->value);
-        return $this->returnNewObject($md5);
+        return $this->returnString($md5);
     }
 
     /*
@@ -191,12 +193,12 @@ class String extends Object
             } elseif (get_class($var) == "String") {
                 $this->regexpReplacement($pattern, $var);
             } else {
-                return $this->returnFalseObject();
+                return false;
             }
         } elseif (gettype($var) == 'string') {
             $this->regexpReplacement($pattern, $var);
         } else {
-            return $this->returnFalseObject();
+            return false;
         }
     }
 
@@ -218,10 +220,10 @@ class String extends Object
     {
         if ($use_register) {
             $new_value = str_ireplace($char, $new_char, $this->value);
-            return $this->returnObject($new_value);
+            return $this->returnSelf($new_value);
         } else {
             $new_value = str_replace($char, $new_char, $this->value);
-            return $this->returnObject($new_value);
+            return $this->returnSelf($new_value);
         }
     }
 
@@ -229,7 +231,7 @@ class String extends Object
     public function reverse()
     {
         $new_value = strrev($this->value);
-        return $this->returnObject($new_value);
+        return $this->returnSelf($new_value);
     }
 
 
@@ -239,14 +241,14 @@ class String extends Object
     public function slice($left_border = 0, $right_border = 0)
     {
         $sliced_string = substr($this->value, $left_border, $right_border);
-        return $this->returnObject($sliced_string);
+        return $this->returnSelf($sliced_string);
     }
 
 
     public function split($pattern)
     {
         $array = explode($pattern, $this->value);
-        return $this->returnArrayObject($array);
+        return $this->returnArray($array);
     }
 
     /*
@@ -259,10 +261,10 @@ class String extends Object
                 if(intval($this->value) === 0){
                     $this->throwException(ERROR_NOT_A_NUMBER);
                 } else {
-                    return $this->returnIntObject(intval($this->value));
+                    return $this->returnInteger(intval($this->value));
                 }
             } else {
-                return $this->returnIntObject(intval($this->value));
+                return $this->returnInteger(intval($this->value));
             }
         } else {
             $this->throwException(ERROR_NOT_A_NUMBER);
@@ -296,44 +298,6 @@ class String extends Object
         }
 
     }
-
-    private function returnObject($new_value)
-    {
-        $this->value = $new_value;
-        return $this;
-    }
-
-    private function returnNewObject($new_object_value)
-    {
-        $new_str_object = new self($new_object_value);
-        return $new_str_object;
-    }
-
-
-    private function returnIntObject($int_value)
-    {
-        $int = new Integer($int_value);
-        return $int;
-    }
-
-
-    private function returnArrayObject($array_value)
-    {
-
-    }
-
-    private function returnFalseObject(){
-        $false = new Boolean(false);
-        return $false;
-    }
-
-
-    private function returnCharObject($char)
-    {
-        return $char;
-    }
-
-
 
 
 }

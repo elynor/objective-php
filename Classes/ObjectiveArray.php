@@ -41,8 +41,4 @@ class ObjectiveArray extends ArrayObject
     }
 
 
-    public function returnBooleanObject(){
-
-    }
-
 }

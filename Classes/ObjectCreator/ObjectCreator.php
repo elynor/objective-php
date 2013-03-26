@@ -11,8 +11,41 @@ include "AbstractObjectCreator.php";
 class BooleanCreator extends AbstractObjectCreator
 {
 
-    public function create($value)
+    static function create($value)
     {
         return new Boolean($value);
     }
 }
+
+class IntegerCreator extends AbstractObjectCreator
+{
+    static function create($value)
+    {
+        return new Integer($value);
+    }
+}
+
+class StringCreator extends AbstractObjectCreator
+{
+    static function create($value)
+    {
+        return new String($value);
+    }
+}
+
+class FloatCreator extends AbstractObjectCreator
+{
+    static function create($value)
+    {
+        return new Float($value);
+    }
+}
+
+class ArrayCreator extends AbstractObjectCreator
+{
+    static function create($value)
+    {
+        return new ObjectiveArray($value);
+    }
+}
+

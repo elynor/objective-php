@@ -6,5 +6,5 @@
  */
 abstract class AbstractObjectCreator
 {
-    public abstract function create($value);
+    static abstract function create($value);
 }
