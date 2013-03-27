@@ -2,11 +2,8 @@
 
 include "InterfaceIncluder.php";
 include "ObjectCreator/ObjectCreator.php";
-/**
- * User: michael
- * Date: 2/15/13
- * Time: 1:36 PM
- */
+
+
 class Object
 {
     protected $value;
@@ -48,7 +45,6 @@ class Object
      */
     public function equals($other_class)
     {
-        $bool_factory = new BooleanCreator();
         if (method_exists($other_class, "getValue")) {
             if ($this->getValue() === $other_class->getValue()) {
                 return true;
