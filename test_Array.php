@@ -109,6 +109,40 @@ class test_Array extends UnitTestCase
 
     }
 
+    function testMinimize(){
+        //If there is a primitive type in array, the String would be created
+        $array = new ObjectiveArray("Test");
+        $result = $array->minimize()->add("11");
+        $this->assertEqual($result, "Test11");
+
+
+        //If there would be an object, this method would return an object.
+        $array = new ObjectiveArray(new Integer(123));
+        $result = $array->minimize()->increment();
+        $this->assertEqual($result->getValue(), 124);
+    }
+
+    function testFindElement(){
+        $array = new ObjectiveArray(1, 3, 8, 21, "Test", new String("Test21"));
+        $position = $array->findElement(8)->minimize();
+        $this->assertEqual($position->getValue(), 2);
+
+        $string = new String("Test21");
+        $position = $array->findElement($string)->minimize();
+        $this->assertEqual($position->getValue(), 5);
+        //Result array would be empty if the search string would not be found.
+        $position = $array->findElement("123");
+        $this->assertTrue($position->isEmpty());
+    }
+
+    function testDeleteElement(){
+        $array = new ObjectiveArray(1, 3, 8, 21, 3, "Test", 3, new String("Test21"));
+        $this->assertEqual($array->length()->getValue(), 8);
+        $array->delete(3);
+        $array->compact();
+        $this->assertEqual($array->length()->getValue(), 5);
+    }
+
 
 
 }

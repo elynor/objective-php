@@ -6,6 +6,7 @@
 
 define(ERROR_WRONG_NUMBER_OF_ARGUMENTS, "Number of arguments is not correct");
 define(ERROR_NOT_BOOL, "Return value of lambda is not boolean!");
+define(ERROR_NOT_SINGLE_ELEMENT, "This array has more than 1 element");
 
 class ObjectiveArray extends ArrayObject
 {
@@ -34,10 +35,11 @@ class ObjectiveArray extends ArrayObject
     /*
      * Returns a copy of an array with all the null values removed
      */
-    public function compact(){
+    public function compact()
+    {
         $new_array = array();
-        foreach($this as $element){
-            if(!empty($element)){
+        foreach ($this as $element) {
+            if (!empty($element)) {
                 array_push($new_array, $element);
             }
         }
@@ -88,7 +90,7 @@ class ObjectiveArray extends ArrayObject
                     if ($result && !$select_except) {
                         array_push($new_array, $element);
                     }
-                    if(!$result && $select_except){
+                    if (!$result && $select_except) {
                         array_push($new_array, $element);
                     }
                 } else {
@@ -102,8 +104,82 @@ class ObjectiveArray extends ArrayObject
         return $this->returnArray($new_array);
     }
 
+    /*
+     * If current array contains only 1 element, it would create a string which represents that value if it would be php
+     * basic type , it would create a string with this value. Otherwise, it would lust return an object.
+     */
+    public function minimize()
+    {
+        if ($this->length()->getValue() == 1) {
+            $type = gettype($this[0]);
+            if($type == "string"    ||
+                $type == "integer"  ||
+                $type == "double"   ||
+                $type == "array"    ||
+                $type == "NULL"){
+
+                return $this->returnString($this[0]);
+            } else {
+                return $this[0];
+            }
+        } else {
+            $this->throwException(ERROR_NOT_SINGLE_ELEMENT);
+        }
+    }
 
 
+    /*
+     * Returns an array with all element's positions
+     */
+    public function findElement($element)
+    {
+        $results_array = array();
+        $array_element = "";
+        $comparable_element = "";
+        for ($i = 0; $i < count($this); $i++) {
+            //If array has objects, that could be threaten as an Object, let's do this.
+
+            $type = gettype($this[$i]);
+            if($type == "string"    ||
+                $type == "integer"  ||
+                $type == "double"   ||
+                $type == "array"    ||
+                $type == "NULL"){
+                $array_element = $this[$i];
+            } else {
+                $array_element = $this[$i]->getValue();
+            }
+            // Check for inputted element. If it is an object, lets get it's value
+            $type = gettype($element);
+            if($type == "string"    ||
+                $type == "integer"  ||
+                $type == "double"   ||
+                $type == "array"    ||
+                $type == "NULL"){
+
+                $comparable_element = $element;
+            } else {
+                $comparable_element = $element->getValue();
+            }
+
+            if ($array_element === $comparable_element) {
+                array_push($results_array, $i);
+            }
+        }
+        return $this->returnArray($results_array);
+    }
+
+    /*
+     * Delete all of the presence of element in array
+     */
+    public function delete($element)
+    {
+        $element_positions = $this->findElement($element);
+        foreach($element_positions as $position){
+            $this[$position] = null;
+        }
+        return $this;
+    }
 
     /*
     * Object methods.
@@ -114,7 +190,6 @@ class ObjectiveArray extends ArrayObject
     {
         if (empty($this) ||
             $this === false ||
-            //Well yeah. Pretty heavy operation, but PHP have no method "length" for an ArrayObject...
             $this->length()->getValue() == 0
         ) {
             return true;
