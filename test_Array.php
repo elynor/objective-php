@@ -143,6 +143,57 @@ class test_Array extends UnitTestCase
         $this->assertEqual($array->length()->getValue(), 5);
     }
 
+    /*
+     * Appends element to the end of the array
+     */
+    function testAppend(){
+        $array = new ObjectiveArray("Test");
+        $str = new String("Test11");
+        $array->append($str);
+        $this->assertEqual($array[1], "Test11");
+    }
+
+    /*
+     * Sort array by keys
+     * Don't know how to test it. So I'll just show an example.
+     */
+    function testKeySort(){
+        $array = new ObjectiveArray(
+            array(
+                'z' => 123,
+                't' => 2123,
+                'a' => 6123
+            )
+        );
+
+        $array2 = new ObjectiveArray(
+            array(
+                'a' => 6123,
+                't' => 2123,
+                'z' => 123
+            )
+        );
+        $array->keySort();
+
+        $this->assertEqual($array, $array2);
+    }
+
+    function testValueSort(){
+        $array = new ObjectiveArray(15, 3, 8, 21, 2, 1, 5);
+        $array->valueSort();
+        //Result is:
+        //ObjectiveArray Object ( [storage:ArrayObject:private] => Array ( [5] => 1 [4] => 2 [1] => 3 [6] => 5 [2] => 8 [0] => 15 [3] => 21 ) )
+    }
+
+    function testReverse(){
+        $array = new ObjectiveArray(15, 3, 8, 21, 2, 1, 5);
+        $array->reverse();
+        $this->assertEqual($array[0], 5);
+
+        $array = new ObjectiveArray(1, 3, 8, 21, 3, "Test", 3, new String("Test21"));
+        $array->reverse();
+        $this->assertEqual($array[0], "Test21");
+    }
 
 
 }

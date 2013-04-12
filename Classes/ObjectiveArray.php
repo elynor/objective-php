@@ -1,12 +1,8 @@
 <?php
-
-/*
- * Hate it, but i need to extend only 1 object. So I will create all of the Object methods. Hate it T_T
- */
-
 define(ERROR_WRONG_NUMBER_OF_ARGUMENTS, "Number of arguments is not correct");
 define(ERROR_NOT_BOOL, "Return value of lambda is not boolean!");
 define(ERROR_NOT_SINGLE_ELEMENT, "This array has more than 1 element");
+define(ERROR_NOT_A_STRING, "This is not a string");
 
 class ObjectiveArray extends ArrayObject
 {
@@ -31,6 +27,14 @@ class ObjectiveArray extends ArrayObject
         }
     }
 
+    /*
+     * @Override
+     * Appends element to array. Override parent method just for usability
+     */
+    public function append($element){
+        parent::append($element);
+    }
+
 
     /*
      * Returns a copy of an array with all the null values removed
@@ -47,84 +51,15 @@ class ObjectiveArray extends ArrayObject
     }
 
     /*
-     * Calculates the length of an object array
+     * Delete all of the presence of element in array
      */
-    public function length()
+    public function delete($element)
     {
-        $count = $this->count();
-        return $this->returnInteger($count);
-    }
-
-    /*
-     * Takes block and do the operations in it to every item in array
-     */
-    public function map($block)
-    {
-
-        $func_reflection = new ReflectionFunction($block);
-        $num_of_params = $func_reflection->getNumberOfParameters();
-        if ($num_of_params == 1) {
-            for ($counter = 0; $counter < $this->length()->getValue(); $counter++) {
-                $this[$counter] = $block($this[$counter]);
-            }
-        } else {
-            $this->throwException(ERROR_WRONG_NUMBER_OF_ARGUMENTS);
+        $element_positions = $this->findElement($element);
+        foreach($element_positions as $position){
+            $this[$position] = null;
         }
-
         return $this;
-    }
-
-    /*
-     * In this case block should return boolean - true or false
-     */
-    public function select($block, $select_except = false)
-    {
-        $func_reflection = new ReflectionFunction($block);
-        $num_of_params = $func_reflection->getNumberOfParameters();
-        $new_array = array();
-
-        if ($num_of_params == 1) {
-            foreach ($this as $element) {
-                $result = $block($element);
-                if (is_bool($result)) {
-                    if ($result && !$select_except) {
-                        array_push($new_array, $element);
-                    }
-                    if (!$result && $select_except) {
-                        array_push($new_array, $element);
-                    }
-                } else {
-                    $this->throwException(ERROR_NOT_BOOL);
-                }
-            }
-        } else {
-            $this->throwException(ERROR_WRONG_NUMBER_OF_ARGUMENTS);
-        }
-
-        return $this->returnArray($new_array);
-    }
-
-    /*
-     * If current array contains only 1 element, it would create a string which represents that value if it would be php
-     * basic type , it would create a string with this value. Otherwise, it would lust return an object.
-     */
-    public function minimize()
-    {
-        if ($this->length()->getValue() == 1) {
-            $type = gettype($this[0]);
-            if($type == "string"    ||
-                $type == "integer"  ||
-                $type == "double"   ||
-                $type == "array"    ||
-                $type == "NULL"){
-
-                return $this->returnString($this[0]);
-            } else {
-                return $this[0];
-            }
-        } else {
-            $this->throwException(ERROR_NOT_SINGLE_ELEMENT);
-        }
     }
 
 
@@ -169,18 +104,152 @@ class ObjectiveArray extends ArrayObject
         return $this->returnArray($results_array);
     }
 
+
     /*
-     * Delete all of the presence of element in array
+     * Just a wrapper on ArrayObject's
      */
-    public function delete($element)
-    {
-        $element_positions = $this->findElement($element);
-        foreach($element_positions as $position){
-            $this[$position] = null;
-        }
+    public function keySort(){
+        $this->ksort();
         return $this;
     }
 
+    /*
+     * Calculates the length of an object array
+     */
+    public function length()
+    {
+        $count = $this->count();
+        return $this->returnInteger($count);
+    }
+
+    /*
+     * Takes block and do the operations in it to every item in array
+     */
+    public function map($block)
+    {
+
+        $func_reflection = new ReflectionFunction($block);
+        $num_of_params = $func_reflection->getNumberOfParameters();
+        if ($num_of_params == 1) {
+            for ($counter = 0; $counter < $this->length()->getValue(); $counter++) {
+                $this[$counter] = $block($this[$counter]);
+            }
+        } else {
+            $this->throwException(ERROR_WRONG_NUMBER_OF_ARGUMENTS);
+        }
+
+        return $this;
+    }
+
+    /*
+     * If current array contains only 1 element, it would create a string which represents that value if it would be php
+     * basic type , it would create a string with this value. Otherwise, it would lust return an object.
+     */
+    public function minimize()
+    {
+        if ($this->length()->getValue() == 1) {
+            $type = gettype($this[0]);
+            if($type == "string"    ||
+                $type == "integer"  ||
+                $type == "double"   ||
+                $type == "array"    ||
+                $type == "NULL"){
+
+                return $this->returnString($this[0]);
+            } else {
+                return $this[0];
+            }
+        } else {
+            $this->throwException(ERROR_NOT_SINGLE_ELEMENT);
+        }
+    }
+
+
+    /*
+     * Just a wrapper on Array Object' s natsort()
+     */
+    public function naturalSort(){
+        $this->natsort();
+        return $this;
+    }
+
+    /*
+     * Only for arrays, not hashes
+     */
+    public function reverse(){
+        $length = $this->count()-1;
+        $half = $this->count()/2;
+
+        for($counter = 0; $counter < $half; $counter++){
+            $temp = $this[$length-$counter];
+            $this[$length-$counter] = $this[$counter];
+            $this[$counter] = $temp;
+        }
+
+        return $this;
+    }
+
+    /*
+     * In this case block should return boolean - true or false
+     */
+    public function select($block, $select_except = false)
+    {
+        $func_reflection = new ReflectionFunction($block);
+        $num_of_params = $func_reflection->getNumberOfParameters();
+        $new_array = array();
+
+        if ($num_of_params == 1) {
+            foreach ($this as $element) {
+                $result = $block($element);
+                if (is_bool($result)) {
+                    if ($result && !$select_except) {
+                        array_push($new_array, $element);
+                    }
+                    if (!$result && $select_except) {
+                        array_push($new_array, $element);
+                    }
+                } else {
+                    $this->throwException(ERROR_NOT_BOOL);
+                }
+            }
+        } else {
+            $this->throwException(ERROR_WRONG_NUMBER_OF_ARGUMENTS);
+        }
+
+        return $this->returnArray($new_array);
+    }
+
+    /*
+     * String representation of array
+     */
+    public function serialize(){
+        return $this->returnString(parent::serialize());
+    }
+
+    /*
+     * Restoring data from text string
+     */
+    public function unserialize($string){
+        if(is_string($string)){
+            $serialized_str = $string;
+        } else {
+            if(get_class($string) == "String"){
+                $serialized_str = $string->getValue();
+            } else {
+                $this->throwException(ERROR_NOT_A_STRING);
+            }
+        }
+
+        parent::unserialize($serialized_str);
+    }
+
+    /*
+     * Just renamed method asort() from ArrayObject. Sorts by values in array
+     */
+    public function valueSort(){
+        $this->asort();
+        return $this;
+    }
     /*
     * Object methods.
     * Need to copypaste them because of multiple inheritance -_-
@@ -196,6 +265,13 @@ class ObjectiveArray extends ArrayObject
         } else {
             return false;
         }
+    }
+
+    /*
+     * Clone current array
+     */
+    public function getClone(){
+        return $this->returnArray($this);
     }
 
 
@@ -224,6 +300,7 @@ class ObjectiveArray extends ArrayObject
         $this->exchangeArray($modified_value);
         return $this;
     }
+
 
     /*
      * End of Object methods
